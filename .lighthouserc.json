@@ -1,0 +1,58 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./dist",
+      "numberOfRuns": 1,
+      "url": ["./index.html"],
+      "settings": {
+        "emulatedFormFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1600,
+          "cpuSlowdownMultiplier": 4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.560,
+          "uploadThroughputKbps": 675
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 360,
+          "height": 640,
+          "deviceScaleFactor": 3,
+          "disabled": false
+        },
+        "budgets": [
+          {
+            "path": "/*",
+            "resourceSizes": [
+              { "resourceType": "total", "budget": 450 },
+              { "resourceType": "script", "budget": 250 },
+              { "resourceType": "stylesheet", "budget": 70 },
+              { "resourceType": "image", "budget": 350 },
+              { "resourceType": "font", "budget": 120 }
+            ],
+            "timings": [
+              { "metric": "first-contentful-paint", "budget": 2000 },
+              { "metric": "interactive", "budget": 4000 },
+              { "metric": "largest-contentful-paint", "budget": 3000 }
+            ]
+          }
+        ]
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.9 }],
+        "categories:accessibility": ["error", { "minScore": 0.9 }],
+        "categories:best-practices": ["error", { "minScore": 0.9 }],
+        "categories:seo": ["error", { "minScore": 0.9 }],
+        "largest-contentful-paint": [
+          "error",
+          { "maxNumericValue": 3000, "aggregationMethod": "optimistic" }
+        ],
+        "total-byte-weight": ["error", { "maxNumericValue": 350000 }]
+      }
+    },
+    "upload": { "target": "temporary-public-storage" }
+  }
+}

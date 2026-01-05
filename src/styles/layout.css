@@ -1,0 +1,54 @@
+/* Layout helpers */
+.container { width: min(1200px, 92%); margin: 0 auto; }
+@media (max-width: 640px) { .container { width: min(1200px, 94%); } }
+.section { padding: clamp(72px, 12vw, 110px) 0; position: relative; }
+.section.compact { padding: clamp(56px, 9vw, 88px) 0; }
+
+/* Creative contained background bands (semantic) */
+section#home > .container { background: var(--panel-hero); }
+section#about > .container { background: var(--panel-about); }
+section#skills > .container { background: var(--panel-skills); }
+section#projects > .container { background: var(--panel-projects); }
+section#contact > .container { background: var(--panel-contact); }
+
+/* Generic contained utility (fallback) */
+.section-contained > .container {
+  background: var(--panel-base);
+  border-radius: var(--radius);
+  padding: var(--space-8) var(--space-6);
+}
+
+/* Elevation & glow accents */
+section > .container {
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  position: relative;
+  box-shadow: var(--elevation-1);
+  overflow: hidden;
+  padding: var(--space-6) var(--space-5);
+}
+section > .container::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(650px 400px at 85% 25%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 70%),
+              radial-gradient(650px 400px at 15% 75%, color-mix(in srgb, var(--primary) 24%, transparent), transparent 70%);
+  opacity: .08;
+}
+
+/* Footer specialized surface */
+.site-footer > .container { background: var(--surface-2); border-radius: var(--radius-lg); }
+
+main { min-height: 70vh; }
+
+/* Render optimization: skip work for below-the-fold sections when possible */
+@supports (content-visibility: auto) {
+  section#about > .container,
+  section#skills > .container,
+  section#projects > .container,
+  section#contact > .container {
+    content-visibility: auto;
+    contain-intrinsic-size: 780px 520px;
+  }
+}

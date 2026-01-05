@@ -1,0 +1,85 @@
+:root {
+  /* Core palette */
+  --bg: #0b1020;
+  --surface: #12172a;
+  --surface-2: #0e1426;
+  --text: #e6e8f0;
+  --muted: #a3acc2;
+  --primary: #7c5cff;
+  --primary-600: #6940ff;
+  --accent: #22d3ee;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Effects */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --card: rgba(255, 255, 255, 0.07);
+  --elevation-1: 0 8px 24px rgba(2, 6, 23, 0.25);
+  --elevation-2: 0 16px 40px rgba(2, 6, 23, 0.35);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-lg: 24px;
+  --ring: color-mix(in oklab, var(--accent) 70%, transparent);
+
+  /* Links */
+  --link: color-mix(in srgb, var(--accent) 86%, white 0%);
+  --link-hover: var(--accent);
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* Fluid typography */
+  --font-size-xs: clamp(12px, 0.74rem + 0.1vw, 13px);
+  --font-size-sm: clamp(14px, 0.85rem + 0.2vw, 15px);
+  --font-size-base: clamp(16px, 0.95rem + 0.25vw, 18px);
+  --font-size-lg: clamp(18px, 1.05rem + 0.35vw, 22px);
+  --font-size-xl: clamp(22px, 1.2rem + 1vw, 32px);
+  --font-size-2xl: clamp(28px, 1.6rem + 1.6vw, 44px);
+
+  /* Section surfaces (contained bands) */
+  --panel-base: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)), var(--surface);
+  --panel-hero: linear-gradient(135deg, color-mix(in srgb, var(--primary) 20%, transparent), transparent 60%), var(--panel-base);
+  --panel-about: linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%), var(--panel-base);
+  --panel-skills: linear-gradient(135deg, color-mix(in srgb, #22c55e 18%, transparent), transparent 60%), var(--panel-base);
+  --panel-projects: linear-gradient(135deg, color-mix(in srgb, #f59e0b 18%, transparent), transparent 60%), var(--panel-base);
+  --panel-contact: linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), var(--panel-base);
+}
+
+html[data-theme='light'] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f3f4f8;
+  --text: #0b1020;
+  --muted: #4a5568;
+  --primary: #6a5cff;
+  --primary-600: #5847ff;
+  --accent: #0ea5e9;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(10, 10, 10, 0.08);
+  --card: rgba(0, 0, 0, 0.04);
+  --elevation-1: 0 8px 24px rgba(2, 6, 23, 0.08);
+  --elevation-2: 0 16px 40px rgba(2, 6, 23, 0.12);
+
+  /* Links */
+  --link: color-mix(in srgb, var(--accent) 90%, black 0%);
+  --link-hover: color-mix(in srgb, var(--accent) 100%, black 0%);
+
+  --panel-base: linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.01)), var(--surface);
+  --panel-hero: linear-gradient(135deg, color-mix(in srgb, var(--primary) 14%, transparent), transparent 60%), var(--panel-base);
+  --panel-about: linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), var(--panel-base);
+  --panel-skills: linear-gradient(135deg, color-mix(in srgb, #22c55e 14%, transparent), transparent 60%), var(--panel-base);
+  --panel-projects: linear-gradient(135deg, color-mix(in srgb, #f59e0b 14%, transparent), transparent 60%), var(--panel-base);
+  --panel-contact: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%), var(--panel-base);
+}

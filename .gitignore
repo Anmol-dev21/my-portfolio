@@ -1,0 +1,19 @@
+node_modules
+dist
+dist-ssr
+
+# local caches
+.vite
+coverage
+
+# OS / editor
+.DS_Store
+.vscode
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# logs
+*.log

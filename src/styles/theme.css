@@ -1,0 +1,8 @@
+/* Theme transitions & reduced-motion */
+html[data-theme] body { transition: background .4s ease, color .3s ease; }
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] body { transition: none; }
+}
+
+/* Optional: focus ring color adapts slightly in dark mode */
+html[data-theme='dark'] :focus-visible { outline-color: var(--accent); }

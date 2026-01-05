@@ -1,0 +1,31 @@
+{
+  "name": "react-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Modern, optimized React.js portfolio with routing, dark mode, and lightweight CSS animations",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "react-simple-typewriter": "^5.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+  "axe-core": "^4.10.0",
+  "@lhci/cli": "^0.13.0",
+    "jsdom": "^24.0.0",
+    "gh-pages": "^6.2.0",
+    "vite": "^5.4.0"
+  }
+}
