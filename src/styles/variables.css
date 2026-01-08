@@ -58,28 +58,52 @@
 }
 
 html[data-theme='light'] {
-  --bg: #f6f7fb;
+  /* Modern, vibrant light theme with soft pastels and high contrast */
+  --bg: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
   --surface: #ffffff;
-  --surface-2: #f3f4f8;
-  --text: #0b1020;
-  --muted: #4a5568;
-  --primary: #6a5cff;
-  --primary-600: #5847ff;
-  --accent: #0ea5e9;
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(10, 10, 10, 0.08);
-  --card: rgba(0, 0, 0, 0.04);
-  --elevation-1: 0 8px 24px rgba(2, 6, 23, 0.08);
-  --elevation-2: 0 16px 40px rgba(2, 6, 23, 0.12);
+  --surface-2: #fafaff;
+  --text: #1a1a2e;
+  --muted: #5b6b8c;
+  --primary: #7c3aed;
+  --primary-600: #6d28d9;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --warning: #f97316;
+  --danger: #ef4444;
+  
+  /* Enhanced glass effects for light mode */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(124, 58, 237, 0.15);
+  --card: rgba(124, 58, 237, 0.05);
+  --elevation-1: 0 8px 32px rgba(124, 58, 237, 0.12);
+  --elevation-2: 0 20px 48px rgba(124, 58, 237, 0.18);
+  --ring: color-mix(in oklab, var(--primary) 60%, transparent);
 
-  /* Links */
-  --link: color-mix(in srgb, var(--accent) 90%, black 0%);
-  --link-hover: color-mix(in srgb, var(--accent) 100%, black 0%);
+  /* Links with better contrast */
+  --link: #0891b2;
+  --link-hover: #0e7490;
 
-  --panel-base: linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.01)), var(--surface);
-  --panel-hero: linear-gradient(135deg, color-mix(in srgb, var(--primary) 14%, transparent), transparent 60%), var(--panel-base);
-  --panel-about: linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), var(--panel-base);
-  --panel-skills: linear-gradient(135deg, color-mix(in srgb, #22c55e 14%, transparent), transparent 60%), var(--panel-base);
-  --panel-projects: linear-gradient(135deg, color-mix(in srgb, #f59e0b 14%, transparent), transparent 60%), var(--panel-base);
-  --panel-contact: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%), var(--panel-base);
+  /* Colorful section panels with gradient backgrounds */
+  --panel-base: linear-gradient(135deg, rgba(255,255,255,.95), rgba(250,245,255,.9)), 
+                radial-gradient(ellipse at top, rgba(124, 58, 237, 0.08), transparent 60%);
+  
+  --panel-hero: linear-gradient(135deg, 
+                  color-mix(in srgb, var(--primary) 18%, rgba(255,255,255,0.9)), 
+                  color-mix(in srgb, var(--accent) 12%, rgba(255,255,255,0.95)) 100%);
+  
+  --panel-about: linear-gradient(135deg, 
+                   rgba(240, 253, 244, 0.95), 
+                   color-mix(in srgb, #10b981 8%, rgba(255,255,255,0.95)) 100%);
+  
+  --panel-skills: linear-gradient(135deg, 
+                    rgba(254, 249, 239, 0.95), 
+                    color-mix(in srgb, #f97316 10%, rgba(255,255,255,0.95)) 100%);
+  
+  --panel-projects: linear-gradient(135deg, 
+                      rgba(240, 249, 255, 0.95), 
+                      color-mix(in srgb, var(--accent) 12%, rgba(255,255,255,0.95)) 100%);
+  
+  --panel-contact: linear-gradient(135deg, 
+                     color-mix(in srgb, var(--primary) 10%, rgba(250,245,255,0.95)), 
+                     rgba(255,255,255,0.95) 100%);
 }
