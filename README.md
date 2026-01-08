@@ -1,140 +1,195 @@
 <div align="center">
 
-# React Portfolio — Modern, Animated, Production-Ready
+# 🚀 Personal Portfolio
 
-Full-featured React 18 + Vite portfolio with animations, dark mode, routing, and JSON-driven content. Built for fast iteration and easy deployment (GitHub Pages, Vercel, Netlify).
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-<br/>
-<strong>Prefer a single, complete guide?</strong><br/>
-See <a href="./DOCUMENTATION.md"><code>DOCUMENTATION.md</code></a> for the all-in-one manual (architecture, styling, config, deployment, SEO, FAQ).
+**A modern, responsive portfolio website built with React 18, Vite, and Framer Motion**
+
+[Live Demo](https://anmol-dev21.github.io/my-portfolio) · [Report Bug](https://github.com/Anmol-dev21/my-portfolio/issues) · [Request Feature](https://github.com/Anmol-dev21/my-portfolio/issues)
 
 </div>
 
-## Highlights
+---
 
-- React 18 + Vite (fast dev/build)
-- React Router with lazy routes (including a dedicated CV page)
-- Framer Motion animations and typewriter effect
-- Dark/Light theme via CSS variables (no JS theme lib)
-- Clean design system: spacing scale, glass/cards, grid/stack utilities
-- Sections: Hero, About, Skills, Projects, Contact, Footer
-- EmailJS-powered contact form (env-based; opt-in)
-- SEO: OG/Twitter meta, `og-image.svg`, `robots.txt`
-- SPA fallback (`public/404.html`) for static hosts
+## ✨ Features
 
-All topics are consolidated in the single guide: `DOCUMENTATION.md`.
+- **⚡ Lightning Fast** - Built with Vite for instant dev server and optimized builds
+- **🎨 Modern Design** - Clean, responsive UI with glass-morphism effects
+- **🌗 Dark Mode** - Seamless theme switching with CSS variables
+- **📱 Mobile First** - Fully responsive across all devices
+- **🎭 Smooth Animations** - Framer Motion powered transitions and effects
+- **📧 Contact Form** - Integrated EmailJS for direct messaging
+- **♿ Accessible** - WCAG compliant with semantic HTML
+- **🔍 SEO Optimized** - Meta tags, Open Graph, and Twitter Cards
+- **📄 CV Page** - Dedicated resume viewer with download option
+
+## 🛠️ Built With
+
+- **Frontend Framework:** React 18
+- **Build Tool:** Vite
+- **Routing:** React Router v6
+- **Animations:** Framer Motion
+- **Styling:** Custom CSS with modern features
+- **Form Handling:** EmailJS
+- **Deployment:** GitHub Pages
+
+For complete technical documentation, see [`DOCUMENTATION.md`](DOCUMENTATION.md)
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-e:/portfolio
-├─ public/
-│  ├─ 404.html           # SPA fallback for static hosting
-│  ├─ robots.txt         # Crawl policy (allow all by default)
-│  ├─ og-image.svg       # Social preview image
-│  └─ cv.pdf             # Your resume (add this file)
-├─ src/
-│  ├─ assets/            # Images, icons (e.g., profile.svg)
-│  ├─ components/        # Navbar, Footer, cards, UI pieces
-│  ├─ data/              # skills.js, projects.js, socials.js
-│  ├─ hooks/             # theme/scroll helpers
-│  ├─ pages/             # Home, CV.jsx, etc.
-│  ├─ styles/            # variables.css, index.css
-│  ├─ App.jsx            # Layout and routes
-│  └─ main.jsx           # App bootstrap
-├─ index.html            # Root HTML (SEO + app mount)
-├─ vite.config.js        # Vite config (base for GH Pages)
-├─ package.json          # Scripts and deps
-└─ README.md             # This file
+portfolio/
+├── public/
+│   ├── 404.html              # SPA fallback for static hosting
+│   ├── robots.txt            # SEO crawler directives
+│   ├── og-image.svg          # Social media preview image
+│   └── profile.svg           # Profile avatar
+├── src/
+│   ├── assets/               # Images and static files
+│   ├── components/           # Reusable UI components
+│   │   ├── Hero.jsx          # Landing section with typewriter
+│   │   ├── About.jsx         # About me section
+│   │   ├── Skills.jsx        # Technical skills grid
+│   │   ├── Projects.jsx      # Project showcase
+│   │   ├── Contact.jsx       # Contact form
+│   │   └── ...
+│   ├── data/                 # Content configuration
+│   │   ├── projects.js       # Project listings
+│   │   ├── skills.js         # Skills data
+│   │   └── socials.js        # Social media links
+│   ├── hooks/                # Custom React hooks
+│   ├── pages/                # Route pages
+│   ├── styles/               # CSS modules and themes
+│   ├── App.jsx               # Main app component
+│   └── main.jsx              # Entry point
+├── index.html                # HTML template
+├── package.json              # Dependencies and scripts
+└── vite.config.js            # Vite configuration
 ```
 
-## Getting Started
+## 🚀 Quick Start
 
-1. Install dependencies
+### Prerequisites
 
-```powershell
+- Node.js 16+ and npm/yarn
+- Git
+
+### Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/Anmol-dev21/my-portfolio.git
+cd my-portfolio
+```
+
+2. **Install dependencies**
+
+```bash
 npm install
 ```
 
-2. Start the dev server
+3. **Set up environment variables (optional for contact form)**
 
-```powershell
+```bash
+cp .env.example .env
+# Edit .env with your EmailJS credentials
+```
+
+4. **Start development server**
+
+```bash
 npm run dev
 ```
 
-3. Build for production
+Visit `http://localhost:5173` to see your portfolio!
 
-```powershell
-npm run build
-```
+### Available Scripts
 
-4. Local production preview
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run format` | Format code with Prettier |
+| `npm run deploy` | Deploy to GitHub Pages |
 
-```powershell
-npm run preview
-```
+## ⚙️ Configuration
 
-## Configuration and Content
+### Customize Content
 
-- Branding and hero text: `src/components/Hero.jsx`
-- Avatar: `src/assets/profile.svg` (replace or update the src)
-- Skills/projects/socials: `src/data/*.js` (JSON-like objects)
-- Global styles and theme tokens: `src/styles/variables.css`, `src/styles/index.css`
-- CV page: `src/pages/CV.jsx` (embeds `/cv.pdf`)
-- Resume file: `public/cv.pdf` (required for Download/View buttons)
+Update these files to personalize your portfolio:
 
-### Contact Form (EmailJS)
+- **Personal Info**: `src/components/Hero.jsx`, `src/components/About.jsx`
+- **Projects**: `src/data/projects.js`
+- **Skills**: `src/data/skills.js`
+- **Social Links**: `src/data/socials.js`
+- **Theme Colors**: `src/styles/variables.css`
 
-1. Create a free account at EmailJS, add a service + template with fields: `user_name`, `user_email`, `message`.
-2. Copy `.env.example` to `.env` and fill values:
+### Setup Contact Form
 
-```
+1. Create free account at [EmailJS](https://www.emailjs.com/)
+2. Create email service and template with fields: `user_name`, `user_email`, `message`
+3. Add credentials to `.env`:
+
+```env
 VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-3. Restart the dev server. Without env vars, the form will render but won’t send.
+4. Restart dev server
 
-## Deployment
-
-See DOCUMENTATION.md for full details. Quick starts:
+## 🌐 Deployment
 
 ### GitHub Pages
 
-- If deploying under a repo subpath, set Vite `base` in `vite.config.js` to `'/your-repo-name/'`.
-- Build and publish:
-
-```powershell
+```bash
 npm run deploy
 ```
 
-### Vercel / Netlify / Static host
+### Vercel / Netlify
 
-- Build command: `npm run build`
-- Output directory: `dist`
-- Ensure SPA fallback is enabled; `public/404.html` covers GitHub Pages. Netlify users can add `_redirects` if desired (see docs/DEPLOYMENT.md).
+1. Connect your repository
+2. Build command: `npm run build`
+3. Output directory: `dist`
 
-## Notes on the CV Page
+## 📸 Screenshots
 
-- The embedded PDF may show a vendor toolbar at the very top; the app overlays a small mask to hide that band while keeping the site Navbar visible.
-- To remove the mask, export a clean PDF without a toolbar or update the CSS height of `.cv-mask-top` if you see a sliver.
+> Add screenshots of your portfolio here once deployed!
 
-## Performance and Accessibility
+## 🤝 Contributing
 
-- Vite + code-splitting (lazy CV page) keeps JS small.
-- Images are static and cacheable; add `loading="lazy"` where appropriate.
-- Color contrast and focus states are styled via CSS variables—tweak in `variables.css` if needed.
+Contributions, issues, and feature requests are welcome!
 
-## Contributing / Customizing
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-- Adjust tokens in `src/styles/variables.css` (colors, radius, spacing).
-- Global styles are modular: edit partials in `src/styles/` (`base.css`, `layout.css`, `components.css`, `utilities.css`, `print.css`, `theme.css`) and the aggregator `index.css`.
-- Swap icons via `react-icons`.
-- Add new sections as components and route or anchor them from the Navbar.
+## 📝 License
 
-## License
+This project is [MIT](LICENSE) licensed.
 
-MIT — use, modify, and share freely.
+## 👤 Author
+
+**Anmol**
+
+- GitHub: [@Anmol-dev21](https://github.com/Anmol-dev21)
+- Portfolio: [Live Demo](https://anmol-dev21.github.io/my-portfolio)
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if you like this project!
+
+---
+
+<div align="center">
+Made with ❤️ by Anmol
+</div>
