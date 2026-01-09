@@ -12,7 +12,7 @@ Complete modernization and reorganization of the React portfolio codebase follow
 ## 📊 Changes Overview
 
 ### Files Moved: 13
-### Files Deleted: 3
+### Files Deleted: 6
 ### Imports Updated: 28
 ### Code Quality Issues Fixed: 2
 
@@ -105,6 +105,24 @@ src/
 **Why**: Backup file left in root  
 **Impact**: Reduced root clutter  
 **Verification**: Active README.md remains intact
+
+### 4. `src/utils/motion.js` ❌
+**Why**: Unused Framer Motion helper utilities (no imports found)  
+**Exports**: `fadeUp`, `staggerChildren`, `headerVariant`  
+**Impact**: Removed dead code (20 lines)  
+**Verification**: Grep search confirmed zero imports across codebase
+
+### 5. `src/assets/profile.svg` ❌
+**Why**: Duplicate of `public/profile.svg` (identical SHA-256 hash)  
+**Impact**: Eliminated file duplication  
+**Verification**: Hero.jsx uses `/profile.svg` from public folder
+
+### 6. `REFACTORING_SUMMARY.md` ❌
+**Why**: Redundant documentation (superseded by REFACTORING_REPORT.md)  
+**Impact**: Cleaner root directory  
+**Verification**: All refactoring details preserved in this report
+
+**Empty Folders Removed**: `src/assets/`, `src/utils/`
 
 ---
 
@@ -257,7 +275,7 @@ Import resolution: All paths valid
 
 ### src/utils/
 **Purpose**: Pure utility functions  
-**Contents**: Motion/animation helpers
+**Contents**: *(Currently empty - motion.js removed as unused)*
 
 ### src/styles/
 **Purpose**: Global CSS and design system  
