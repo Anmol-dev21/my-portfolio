@@ -1,10 +1,10 @@
 import { useEffect, lazy, Suspense } from 'react'
 import { useLocation } from 'react-router-dom'
-import Hero from '../components/Hero'
-const About = lazy(() => import('../components/About'))
-const Skills = lazy(() => import('../components/Skills'))
-const Projects = lazy(() => import('../components/Projects'))
-const Contact = lazy(() => import('../components/Contact'))
+import Hero from '../features/hero/Hero'
+const About = lazy(() => import('../features/about/About'))
+const Skills = lazy(() => import('../features/skills/Skills'))
+const Projects = lazy(() => import('../features/projects/Projects'))
+const Contact = lazy(() => import('../features/contact/Contact'))
 
 export default function Home() {
   const location = useLocation()
@@ -20,17 +20,17 @@ export default function Home() {
   useEffect(() => {
     if (!('IntersectionObserver' in window)) {
       // Fallback: idle-time prefetch
-      import('../components/About')
-      import('../components/Skills')
-      import('../components/Projects')
-      import('../components/Contact')
+      import('../features/about/About')
+      import('../features/skills/Skills')
+      import('../features/projects/Projects')
+      import('../features/contact/Contact')
       return
     }
     const entries = [
-      { id: 'about', loader: () => import('../components/About') },
-      { id: 'skills', loader: () => import('../components/Skills') },
-      { id: 'projects', loader: () => import('../components/Projects') },
-      { id: 'contact', loader: () => import('../components/Contact') },
+      { id: 'about', loader: () => import('../features/about/About') },
+      { id: 'skills', loader: () => import('../features/skills/Skills') },
+      { id: 'projects', loader: () => import('../features/projects/Projects') },
+      { id: 'contact', loader: () => import('../features/contact/Contact') },
     ]
     const obs = new IntersectionObserver(
       (list) => {

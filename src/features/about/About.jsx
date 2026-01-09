@@ -1,6 +1,6 @@
 // Replaced JS animations with CSS animation utilities
 // Icons removed in favor of plain labels for size optimization
-import socials from '../data/socials'
+import socials from '../../data/socials'
 
 const HIGHLIGHTS = ['Full Stack', 'JavaScript', 'React', 'CSS', 'Animations']
 

@@ -50,27 +50,39 @@ portfolio/
 │   ├── og-image.svg          # Social media preview image
 │   └── profile.svg           # Profile avatar
 ├── src/
-│   ├── assets/               # Images and static files
-│   ├── components/           # Reusable UI components
-│   │   ├── Hero.jsx          # Landing section with typewriter
-│   │   ├── About.jsx         # About me section
-│   │   ├── Skills.jsx        # Technical skills grid
-│   │   ├── Projects.jsx      # Project showcase
-│   │   ├── Contact.jsx       # Contact form
-│   │   └── ...
-│   ├── data/                 # Content configuration
+│   ├── app/                  # Application core
+│   │   ├── App.jsx           # Root component & routing
+│   │   └── main.jsx          # Entry point
+│   ├── features/             # Feature modules (domain-specific)
+│   │   ├── hero/             # Hero section
+│   │   ├── about/            # About section
+│   │   ├── skills/           # Skills showcase + SkillCard
+│   │   ├── projects/         # Projects list + ProjectCard
+│   │   └── contact/          # Contact form
+│   ├── layout/               # Layout components
+│   │   ├── Navbar.jsx        # Navigation header
+│   │   └── Footer.jsx        # Site footer
+│   ├── components/           # Shared UI components
+│   │   ├── Icon.jsx          # Icon system
+│   │   ├── LogoMark.jsx      # Brand logo
+│   │   └── DarkModeToggle.jsx # Theme switcher
+│   ├── pages/                # Route-level pages
+│   │   ├── Home.jsx          # Landing page
+│   │   ├── ProjectDetail.jsx # Project details
+│   │   └── CV.jsx            # Resume viewer
+│   ├── data/                 # Static content
 │   │   ├── projects.js       # Project listings
 │   │   ├── skills.js         # Skills data
-│   │   └── socials.js        # Social media links
+│   │   └── socials.js        # Social links
 │   ├── hooks/                # Custom React hooks
-│   ├── pages/                # Route pages
-│   ├── styles/               # CSS modules and themes
-│   ├── App.jsx               # Main app component
-│   └── main.jsx              # Entry point
+│   ├── styles/               # Global CSS & design system
+│   └── utils/                # Utility functions
 ├── index.html                # HTML template
 ├── package.json              # Dependencies and scripts
 └── vite.config.js            # Vite configuration
 ```
+
+> **Architecture**: Feature-based organization for scalability. See [REFACTORING_REPORT.md](REFACTORING_REPORT.md) for details.
 
 ## 🚀 Quick Start
 
@@ -125,7 +137,7 @@ Visit `http://localhost:5173` to see your portfolio!
 
 Update these files to personalize your portfolio:
 
-- **Personal Info**: `src/components/Hero.jsx`, `src/components/About.jsx`
+- **Personal Info**: `src/features/hero/Hero.jsx`, `src/features/about/About.jsx`
 - **Projects**: `src/data/projects.js`
 - **Skills**: `src/data/skills.js`
 - **Social Links**: `src/data/socials.js`

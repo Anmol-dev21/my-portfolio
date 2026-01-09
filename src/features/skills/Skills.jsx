@@ -1,5 +1,5 @@
 import SkillCard from './SkillCard'
-import skills from '../data/skills'
+import skills from '../../data/skills'
 
 export default function Skills() {
   return (

@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import DarkModeToggle from './DarkModeToggle'
-import LogoMark from './LogoMark'
+import DarkModeToggle from '../components/DarkModeToggle'
+import LogoMark from '../components/LogoMark'
 import { useCallback, useState, useRef, useEffect } from 'react'
 
 const ITEMS = [

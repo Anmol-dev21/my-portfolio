@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import Icon from './Icon'
-import socials from '../data/socials'
+import Icon from '../../components/Icon'
+import socials from '../../data/socials'
 
 export default function Contact() {
   const formRef = useRef(null)
@@ -21,7 +21,7 @@ export default function Contact() {
       setStatus('success')
       formRef.current?.reset()
     } catch (err) {
-      console.error(err)
+      // Silent fail with user-friendly message - email errors shouldn't expose details
       setStatus('error')
     }
   }

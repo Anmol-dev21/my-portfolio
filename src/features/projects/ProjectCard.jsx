@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Icon from './Icon'
+import Icon from '../../components/Icon'
 
 export default function ProjectCard({ slug, title, description, tags = [], links = {} }) {
   return (
@@ -40,7 +40,7 @@ export default function ProjectCard({ slug, title, description, tags = [], links
         ))}
       </div>
       <div className="mt-auto">
-        <Link className="btn" title={`View details for ${title}`} to={`/projects/${slug}`} onMouseEnter={() => import('../pages/ProjectDetail.jsx')}>
+        <Link className="btn" title={`View details for ${title}`} to={`/projects/${slug}`} onMouseEnter={() => import('../../pages/ProjectDetail.jsx')}>
           Details
         </Link>
       </div>

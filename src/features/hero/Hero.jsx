@@ -1,5 +1,5 @@
 import { Typewriter } from 'react-simple-typewriter'
-import Icon from './Icon'
+import Icon from '../../components/Icon'
 
 export default function Hero() {
   return (
