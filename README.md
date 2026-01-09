@@ -75,8 +75,7 @@ portfolio/
 │   │   ├── skills.js         # Skills data
 │   │   └── socials.js        # Social links
 │   ├── hooks/                # Custom React hooks
-│   ├── styles/               # Global CSS & design system
-│   └── utils/                # Utility functions
+│   └── styles/               # Global CSS & design system
 ├── index.html                # HTML template
 ├── package.json              # Dependencies and scripts
 └── vite.config.js            # Vite configuration
