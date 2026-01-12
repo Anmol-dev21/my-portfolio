@@ -1,14 +1,23 @@
 import Icon from '../components/Icon'
 
 export default function CV() {
-  const hasPDF = true // We can't detect presence at build time; show viewer and graceful fallback
+  const handlePrint = () => {
+    // Open PDF in new window for printing
+    const printWindow = window.open('/cv.pdf', '_blank')
+    if (printWindow) {
+      printWindow.addEventListener('load', () => {
+        printWindow.print()
+      })
+    }
+  }
+
   return (
     <main className="section">
       <div className="container print-container">
         <div className="glass cv-header">
           <strong>Curriculum Vitae</strong>
           <div className="cv-actions">
-            <button className="btn" onClick={() => window.print()} title="Print CV">
+            <button className="btn" onClick={handlePrint} title="Print CV">
               <Icon name="printer" /> Print
             </button>
             <a className="btn" href="/cv.pdf" download>
@@ -19,25 +28,25 @@ export default function CV() {
 
         <div
           className="glass cv-viewer"
-          style={{ marginTop: 'var(--space-4)', padding: 0, overflow: 'hidden' }}
+          style={{ 
+            marginTop: 'var(--space-4)', 
+            padding: 0, 
+            overflow: 'hidden',
+            height: 'calc(100vh - 200px)',
+            minHeight: '600px'
+          }}
         >
-          {hasPDF ? (
-            <object data="/cv.pdf" type="application/pdf" width="100%" height="80vh">
-              <p style={{ padding: 'var(--space-4)' }}>
-                Unable to display PDF.{' '}
-                <a href="/cv.pdf" className="btn">
-                  Download CV
-                </a>
-              </p>
-            </object>
-          ) : (
-            <div style={{ padding: 'var(--space-4)' }}>
-              <p>
-                Please add your CV as <code>public/cv.pdf</code> to view it here.
-              </p>
-            </div>
-          )}
-          <div className="cv-mask-top" aria-hidden="true" />
+          <iframe
+            src="/cv.pdf#view=FitH"
+            type="application/pdf"
+            width="100%"
+            height="100%"
+            style={{ 
+              border: 'none',
+              display: 'block'
+            }}
+            title="Curriculum Vitae"
+          />
         </div>
       </div>
     </main>
