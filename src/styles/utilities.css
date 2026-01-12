@@ -97,7 +97,24 @@
 .chip-sm { padding: 6px 10px; font-size: 12px; }
 
 /* Avatar helpers */
-.avatar-circle { width: clamp(160px, 38vw, 280px); height: clamp(160px, 38vw, 280px); border-radius: 50%; display: grid; place-items: center; }
+.avatar-circle { 
+	width: clamp(200px, 40vw, 320px); 
+	height: clamp(200px, 40vw, 320px); 
+	border-radius: 50%; 
+	display: grid; 
+	place-items: center; 
+	overflow: hidden;
+	position: relative;
+	border: 3px solid color-mix(in srgb, var(--accent) 30%, transparent);
+	box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 20%, transparent),
+	            0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.avatar-circle img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
 .bg-dots {
 	background-image: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--text) 10%, transparent) 1px, transparent 1px);
 	background-size: 20px 20px;

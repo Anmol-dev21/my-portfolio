@@ -46,8 +46,8 @@ export default function Hero() {
               </div>
             </div>
             <div className="anim-scale-in place-center">
-              <div className="card avatar-circle">
-                <img src="/profile.svg" alt="Profile" width={220} height={220} loading="lazy" />
+              <div className="avatar-circle">
+                <img src="/profile.svg" alt="Anmol Bhargav - Full Stack Developer" loading="lazy" />
               </div>
             </div>
           </div>
